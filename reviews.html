@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Reviews | Lenore's Archive</title>
+
+    <meta name="description"
+        content="Book reviews and literary reflections from Lenore's Archive.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           GENERAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #6f2028;
+            color: #3d2020;
+            font-family: "Cormorant Garamond", Georgia, serif;
+        }
+
+
+        /* =========================================
+           BURGUNDY OUTER FRAME
+        ========================================= */
+
+        .outer-frame {
+            min-height: 100vh;
+            padding: 24px 4.5%;
+            background: #6f2028;
+            position: relative;
+        }
+
+        /*
+           Embroidery-inspired side borders.
+           These are made with CSS rather than an external
+           image, so the page stays lightweight.
+        */
+
+        .outer-frame::before,
+        .outer-frame::after {
+            content: "";
+            position: fixed;
+            top: 18px;
+            bottom: 18px;
+            width: 55px;
+            border: 1px solid rgba(232, 199, 157, 0.75);
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .outer-frame::before {
+            left: 13px;
+            border-right: none;
+
+            background:
+                radial-gradient(
+                    ellipse at center 12%,
+                    transparent 0 9px,
+                    #e8c79d 10px 11px,
+                    transparent 12px
+                ),
+                radial-gradient(
+                    ellipse at center 30%,
+                    transparent 0 8px,
+                    #e8c79d 9px 10px,
+                    transparent 11px
+                ),
+                radial-gradient(
+                    ellipse at center 48%,
+                    transparent 0 10px,
+                    #e8c79d 11px 12px,
+                    transparent 13px
+                ),
+                radial-gradient(
+                    ellipse at center 66%,
+                    transparent 0 8px,
+                    #e8c79d 9px 10px,
+                    transparent 11px
+                ),
+                radial-gradient(
+                    ellipse at center 84%,
+                    transparent 0 10px,
+                    #e8c79d 11px 12px,
+                    transparent 13px
+                );
+            background-repeat: no-repeat;
+        }
+
+        .outer-frame::after {
+            right: 13px;
+            border-left: none;
+
+            background:
+                radial-gradient(
+                    ellipse at center 12%,
+                    transparent 0 9px,
+                    #e8c79d 10px 11px,
+                    transparent 12px
+                ),
+                radial-gradient(
+                    ellipse at center 30%,
+                    transparent 0 8px,
+                    #e8c79d 9px 10px,
+                    transparent 11px
+                ),
+                radial-gradient(
+                    ellipse at center 48%,
+                    transparent 0 10px,
+                    #e8c79d 11px 12px,
+                    transparent 13px
+                ),
+                radial-gradient(
+                    ellipse at center 66%,
+                    transparent 0 8px,
+                    #e8c79d 9px 10px,
+                    transparent 11px
+                ),
+                radial-gradient(
+                    ellipse at center 84%,
+                    transparent 0 10px,
+                    #e8c79d 11px 12px,
+                    transparent 13px
+                );
+            background-repeat: no-repeat;
+        }
+
+
+        /* =========================================
+           MAIN CREAM PAGE
+        ========================================= */
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f5eee2;
+            border: 1px solid #c7a77e;
+            box-shadow: 0 12px 45px rgba(25, 8, 8, 0.3);
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+            background: #6f2028;
+            color: #f5eee2;
+
+            padding: 20px 34px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .site-name {
+            font-family: "Parisienne", cursive;
+            font-size: 31px;
+            color: #f0d5ae;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f5eee2;
+            text-decoration: none;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.4px;
+
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e6bd8b;
+        }
+
+        .nav-links .active {
+            color: #f0d5ae;
+            border-bottom: 1px solid #e0b887;
+            padding-bottom: 5px;
+        }
+
+
+        /* =========================================
+           INTRODUCTION
+        ========================================= */
+
+        .intro {
+            text-align: center;
+            padding: 70px 12% 50px;
+        }
+
+        .ornament {
+            color: #8a4a3d;
+            font-size: 22px;
+            letter-spacing: 8px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+
+            font-family: "Parisienne", cursive;
+            font-size: clamp(58px, 8vw, 92px);
+            font-weight: 400;
+
+            color: #642027;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+
+            font-size: 23px;
+            font-style: italic;
+
+            color: #70433d;
+        }
+
+        .intro p {
+            max-width: 750px;
+            margin: 28px auto 0;
+
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           DECORATIVE DIVIDER
+        ========================================= */
+
+        .divider {
+            display: flex;
+            align-items: center;
+
+            max-width: 420px;
+            margin: 25px auto 0;
+
+            gap: 14px;
+
+            color: #8a4a3d;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            height: 1px;
+            background: #b8956d;
+            flex: 1;
+        }
+
+        .divider-symbol {
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           ARCHIVE SECTION
+        ========================================= */
+
+        .reviews-section {
+            padding: 5px 8% 80px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+
+            font-family: "Parisienne", cursive;
+            font-size: 48px;
+            font-weight: 400;
+
+            color: #642027;
+        }
+
+        .section-heading p {
+            margin-top: 4px;
+
+            font-size: 17px;
+            color: #70433d;
+        }
+
+
+        /* =========================================
+           BOOK GRID
+        ========================================= */
+
+        .book-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+
+        /* =========================================
+           BOOK CARDS
+        ========================================= */
+
+        .book-card {
+            display: block;
+
+            min-height: 185px;
+
+            padding: 38px 30px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            background: #fbf6ec;
+
+            border: 1px solid #b99870;
+
+            color: #3d2020;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+
+            background: #fffaf1;
+
+            box-shadow:
+                0 8px 22px rgba(75, 25, 25, 0.13);
+        }
+
+        .book-card h3 {
+            margin: 0;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+
+            color: #642027;
+        }
+
+        .book-author {
+            margin-top: 8px;
+
+            font-size: 17px;
+            font-style: italic;
+
+            color: #70433d;
+        }
+
+        .card-ornament {
+            margin: 13px 0;
+
+            color: #98634e;
+            font-size: 16px;
+            letter-spacing: 4px;
+        }
+
+        .read-arrow {
+            margin-top: 12px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: #6f2028;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background: #6f2028;
+            color: #f5eee2;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .footer-title {
+            font-family: "Parisienne", cursive;
+            font-size: 29px;
+
+            color: #e8c79d;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .outer-frame {
+                padding: 10px;
+            }
+
+            .outer-frame::before,
+            .outer-frame::after {
+                display: none;
+            }
+
+            nav {
+                padding: 18px 15px;
+                justify-content: center;
+            }
+
+            .site-name {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 9px;
+            }
+
+            .intro {
+                padding: 52px 7% 42px;
+            }
+
+            h1 {
+                font-size: 60px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .intro p {
+                font-size: 17px;
+                line-height: 1.7;
+            }
+
+            .reviews-section {
+                padding: 5px 6% 55px;
+            }
+
+            .section-heading h2 {
+                font-size: 43px;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .book-card {
+                min-height: 165px;
+                padding: 32px 22px;
+            }
+
+            .book-card h3 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="outer-frame">
+
+    <div class="page">
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================= -->
+
+        <nav>
+
+            <div class="site-name">
+                Lenore's Archive
+            </div>
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="quizzes.html">
+                    Quizzes
+                </a>
+
+                <a href="reviews.html" class="active">
+                    Book Reviews
+                </a>
+
+                <a href="recommendations.html">
+                    Recommendations
+                </a>
+
+                <a href="about.html">
+                    About the Author
+                </a>
+
+                <a href="contact.html">
+                    Reach the Author
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================= -->
+
+        <section class="intro">
+
+            <div class="ornament">
+                ❧ ✿ ❧
+            </div>
+
+            <h1>
+                Book Reviews
+            </h1>
+
+            <div class="subtitle">
+                Thoughts, reflections and literary wanderings.
+            </div>
+
+            <div class="divider">
+                <span class="divider-symbol">❧</span>
+            </div>
+
+            <p>
+                Here you'll find my thoughts on the books I've read —
+                from enduring classics to modern discoveries.
+                Each review is an attempt to understand what lies
+                beneath the story: its characters, ideas, atmosphere,
+                language and the impressions that remain after the
+                final page.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             BOOK ARCHIVE
+        ========================================= -->
+
+        <section class="reviews-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    The Archive
+                </h2>
+
+                <p>
+                    Select a book to read its full review.
+                </p>
+
+            </div>
+
+
+            <div class="book-grid">
+
+
+                <!-- =========================
+                     OSCAR WILDE
+                ========================= -->
+
+                <a class="book-card"
+                   href="dorian-gray-review.html">
+
+                    <h3>
+                        The Picture of Dorian Gray
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Oscar Wilde
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     BRAM STOKER
+                ========================= -->
+
+                <a class="book-card"
+                   href="dracula-review.html">
+
+                    <h3>
+                        Dracula
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Bram Stoker
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     JANE AUSTEN
+                ========================= -->
+
+                <a class="book-card"
+                   href="pride-and-prejudice-review.html">
+
+                    <h3>
+                        Pride and Prejudice
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Jane Austen
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <a class="book-card"
+                   href="emma-review.html">
+
+                    <h3>
+                        Emma
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Jane Austen
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     CHARLOTTE BRONTË
+                ========================= -->
+
+                <a class="book-card"
+                   href="jane-eyre-review.html">
+
+                    <h3>
+                        Jane Eyre
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Charlotte Brontë
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     EMILY BRONTË
+                ========================= -->
+
+                <a class="book-card"
+                   href="wuthering-heights-review.html">
+
+                    <h3>
+                        Wuthering Heights
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Emily Brontë
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     JULES VERNE
+                ========================= -->
+
+                <a class="book-card"
+                   href="journey-to-the-centre-review.html">
+
+                    <h3>
+                        Journey to the Centre of the Earth
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Jules Verne
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     DONNA TARTT
+                ========================= -->
+
+                <a class="book-card"
+                   href="secret-history-review.html">
+
+                    <h3>
+                        The Secret History
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        Donna Tartt
+                    </div>
+
+                    <div class="read-arrow">
+                        Read Review →
+                    </div>
+
+                </a>
+
+
+                <!-- =========================
+                     JOHN WILLIAMS
+                ========================= -->
+
+                <a class="book-card"
+                   href="stoner-review.html">
+
+                    <h3>
+                        Stoner
+                    </h3>
+
+                    <div class="card-ornament">
+                        ─ ❧ ─
+                    </div>
+
+                    <div class="book-author">
+                        John Williams
+                    </div>
+
+                    <div class="read-arrow">
+           
