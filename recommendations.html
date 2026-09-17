@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Recommendations | Lenore's Archive</title>
+
+    <meta name="description" content="Book recommendations from Lenore's Archive.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #7b2634;
+            color: #33251e;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        /* Golden decorative background */
+
+        .outer-frame {
+            min-height: 100vh;
+            padding: 28px;
+
+            background:
+                radial-gradient(circle at 7% 12%,
+                    transparent 0 25px,
+                    rgba(245,215,123,0.55) 26px 29px,
+                    transparent 30px),
+
+                radial-gradient(circle at 93% 20%,
+                    transparent 0 25px,
+                    rgba(245,215,123,0.55) 26px 29px,
+                    transparent 30px),
+
+                radial-gradient(circle at 8% 88%,
+                    transparent 0 25px,
+                    rgba(245,215,123,0.55) 26px 29px,
+                    transparent 30px),
+
+                radial-gradient(circle at 92% 85%,
+                    transparent 0 25px,
+                    rgba(245,215,123,0.55) 26px 29px,
+                    transparent 30px),
+
+                #b8862c;
+        }
+
+        .page {
+            max-width: 1150px;
+            margin: auto;
+            background: #f7efdf;
+            border: 5px double #8a2533;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+            min-height: calc(100vh - 56px);
+        }
+
+        /* Navigation */
+
+        nav {
+            background: #761f2d;
+            padding: 17px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .site-name {
+            color: #f1d487;
+            font-family: "Parisienne", cursive;
+            font-size: 30px;
+        }
+
+        nav a {
+            color: #fff6e7;
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            margin: 5px 8px;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: #f1d487;
+        }
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            padding: 65px 25px 30px;
+        }
+
+        .ornament {
+            color: #8a2533;
+            font-size: 27px;
+            letter-spacing: 8px;
+        }
+
+        h1 {
+            font-family: "Parisienne", cursive;
+            font-size: 64px;
+            font-weight: 400;
+            color: #7b2634;
+            margin: 12px 0;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 190px;
+            height: 2px;
+            background: #b8862c;
+            margin: 25px auto;
+        }
+
+        /* Intro */
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 25px 35px;
+            text-align: center;
+            font-size: 21px;
+            line-height: 1.65;
+        }
+
+        /* Recommendation sections */
+
+        .recommendation-area {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px 30px 70px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin: 25px 0 35px;
+        }
+
+        .section-heading h2 {
+            color: #7b2634;
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+
+        .section-heading p {
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        /* Book cards */
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .book-card {
+            background: #fffaf0;
+            border: 2px solid #b8862c;
+            padding: 30px;
+            min-height: 230px;
+
+            text-decoration: none;
+            color: #33251e;
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(80,40,20,0.18);
+        }
+
+        .book-card h3 {
+            color: #7b2634;
+            font-size: 29px;
+            margin: 10px 0;
+        }
+
+        .book-card .author {
+            font-size: 19px;
+            font-style: italic;
+        }
+
+        .book-card p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .little-decoration {
+            color: #9b7130;
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+
+        footer {
+            background: #761f2d;
+            color: #fff6e7;
+            padding: 25px;
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+        }
+
+        @media (max-width: 750px) {
+
+            .outer-frame {
+                padding: 10px;
+            }
+
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .site-name {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="outer-frame">
+
+    <div class="page">
+
+
+        <nav>
+
+            <div class="site-name">Lenore's Archive</div>
+
+            <div>
+                <a href="index.html">Home</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="reviews.html">Book Reviews</a>
+                <a href="recommendations.html">Recommendations</a>
+                <a href="about.html">About the Author</a>
+                <a href="contact.html">Reach the Author</a>
+            </div>
+
+        </nav>
+
+
+        <header class="header">
+
+            <div class="ornament">
+                ❦ ✿ ❦
+            </div>
+
+            <h1>Book Recommendations</h1>
+
+            <div class="subtitle">
+                Books worth making room for.
+            </div>
+
+            <div class="divider"></div>
+
+        </header>
+
+
+        <section class="intro">
+
+            <p>
+                A collection of books that deserve a place on your
+                bedside table, your bookshelf, your reading list —
+                or perhaps all three.
+            </p>
+
+            <div class="little-decoration">
+                ❧ ✿ ❧
+            </div>
+
+        </section>
+
+
+        <main class="recommendation-area">
+
+
+            <div class="section-heading">
+
+                <h2>The Reading Shelf</h2>
+
+                <p>
+                    Recommendations will eventually be organised
+                    by mood, genre, period and literary obsession.
+                </p>
+
+            </div>
+
+
+            <div class="book-grid">
+
+
+                <a href="#" class="book-card">
+
+                    <div class="little-decoration">
+                        ❧
+                    </div>
+
+                    <h3>
+                        A Book to Begin With
+                    </h3>
+
+                    <div class="author">
+                        Author Name
+                    </div>
+
+                    <p>
+                        Write your recommendation here —
+                        why you recommend it, who might enjoy it,
+                        and what makes it worth reading.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="book-card">
+
+                    <div class="little-decoration">
+                        ✿
+                    </div>
+
+                    <h3>
+                        A Gothic Recommendation
+                    </h3>
+
+                    <div class="author">
+                        Author Name
+                    </div>
+
+                    <p>
+                        Your description and recommendation
+                        can go here.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="book-card">
+
+                    <div class="little-decoration">
+                        ❦
+                    </div>
+
+                    <h3>
+                        A Classic Worth Reading
+                    </h3>
+
+                    <div class="author">
+                        Author Name
+                    </div>
+
+                    <p>
+                        Add your thoughts here.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="book-card">
+
+                    <div class="little-decoration">
+                        ❧
+                    </div>
+
+                    <h3>
+                        Something Unexpected
+                    </h3>
+
+                    <div class="author">
+                        Author Name
+                    </div>
+
+                    <p>
+                        Add your recommendation here.
+                    </p>
+
+                </a>
+
+
+            </div>
+
+
+        </main>
+
+
+        <footer>
+            Lenore's Archive · © 2026 · All rights reserved
+        </footer>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
