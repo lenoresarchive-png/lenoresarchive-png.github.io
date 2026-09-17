@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Literary Quizzes | Lenore's Archive</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #062f46;
+            color: #1f2930;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        /* Leafy blue background */
+
+        .outer-frame {
+            min-height: 100vh;
+            padding: 25px;
+
+            background:
+                radial-gradient(ellipse at 10% 20%,
+                    transparent 0 20px,
+                    rgba(153,184,151,0.55) 21px 24px,
+                    transparent 25px),
+
+                radial-gradient(ellipse at 90% 30%,
+                    transparent 0 22px,
+                    rgba(153,184,151,0.45) 23px 26px,
+                    transparent 27px),
+
+                radial-gradient(ellipse at 15% 80%,
+                    transparent 0 22px,
+                    rgba(153,184,151,0.45) 23px 26px,
+                    transparent 27px),
+
+                radial-gradient(ellipse at 88% 82%,
+                    transparent 0 20px,
+                    rgba(153,184,151,0.55) 21px 24px,
+                    transparent 25px),
+
+                #062f46;
+        }
+
+        .page {
+            max-width: 1150px;
+            margin: auto;
+            background: #f7f0e4;
+            min-height: calc(100vh - 50px);
+            border: 4px solid #9ab89b;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+        }
+
+        /* Navigation */
+
+        nav {
+            background: #082c3f;
+            padding: 18px 25px;
+            text-align: center;
+            border-bottom: 3px solid #9ab89b;
+        }
+
+        nav a {
+            color: #f4ecdc;
+            text-decoration: none;
+            margin: 5px 10px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: #a8c9a8;
+        }
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            padding: 55px 20px 30px;
+        }
+
+        .header-decoration {
+            font-size: 30px;
+            color: #537c68;
+            letter-spacing: 7px;
+        }
+
+        h1 {
+            font-size: 58px;
+            font-weight: 600;
+            color: #073b57;
+            margin: 12px 0;
+        }
+
+        .subtitle {
+            font-size: 23px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: #789b83;
+            margin: 25px auto;
+        }
+
+        /* Intro */
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 25px 35px;
+            text-align: center;
+            font-size: 21px;
+            line-height: 1.6;
+        }
+
+        /* Quiz cards */
+
+        .quiz-grid {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px 30px 60px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .quiz-card {
+            display: block;
+            text-decoration: none;
+            color: #26343a;
+
+            background: #fffaf1;
+            border: 2px solid #8ba995;
+            padding: 30px 28px;
+
+            min-height: 220px;
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+        }
+
+        .quiz-number {
+            color: #52745e;
+            font-size: 18px;
+        }
+
+        .quiz-card h2 {
+            font-size: 29px;
+            line-height: 1.15;
+            margin: 15px 0;
+            color: #073b57;
+        }
+
+        .quiz-card p {
+            font-size: 19px;
+            line-height: 1.45;
+            margin-bottom: 20px;
+        }
+
+        .take-quiz {
+            font-size: 17px;
+            font-weight: 600;
+            color: #52745e;
+        }
+
+        /* Cute bits */
+
+        .cute {
+            text-align: center;
+            color: #52745e;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #082c3f;
+            color: #f4ecdc;
+            padding: 25px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            .outer-frame {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .quiz-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .quiz-card h2 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="outer-frame">
+
+    <div class="page">
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="reviews.html">Book Reviews</a>
+            <a href="recommendations.html">Recommendations</a>
+            <a href="about.html">About the Author</a>
+            <a href="contact.html">Reach the Author</a>
+
+        </nav>
+
+
+        <header class="header">
+
+            <div class="header-decoration">
+                ❧ ❦ ❧
+            </div>
+
+            <h1>Literary Quizzes</h1>
+
+            <div class="subtitle">
+                Because apparently reading books isn't enough.
+            </div>
+
+            <div class="divider"></div>
+
+        </header>
+
+
+        <section class="intro">
+
+            <p>
+                Welcome to the least academically serious corner of
+                Lenore's Archive. ♡
+            </p>
+
+            <p>
+                Answer a few questions, overthink your personality,
+                and discover which fictional world has apparently
+                been waiting for you all along.
+            </p>
+
+            <div class="cute">
+                ❀ ˚₊‧ ❦ ‧₊˚ ❀
+            </div>
+
+        </section>
+
+
+        <main class="quiz-grid">
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">I · CLASSIC LITERATURE</div>
+
+                <h2>
+                    Which Literary Character From Classic Literature
+                    Suits You the Most?
+                </h2>
+
+                <div class="cute">❦</div>
+
+                <p>
+                    Are you secretly an Elizabeth Bennet,
+                    a Jane Eyre, a Dorian Gray, or something
+                    considerably more alarming?
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">II · PERIOD DRAMA</div>
+
+                <h2>
+                    Who Would Be Your Best Friend in a Period Drama Novel?
+                </h2>
+
+                <div class="cute">❧</div>
+
+                <p>
+                    Discover the fictional companion who would
+                    accompany you through drawing rooms,
+                    scandalous gossip and unnecessarily complicated
+                    courtships.
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">III · WIZARDRY</div>
+
+                <h2>
+                    Which Harry Potter Character Is Your Spirit Animal?
+                </h2>
+
+                <div class="cute">✧ ❦ ✧</div>
+
+                <p>
+                    Find the character whose personality,
+                    habits and general chaos most closely
+                    resemble your own.
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">IV · HOGWARTS</div>
+
+                <h2>
+                    Find Out Your Hogwarts House —
+                    In the Literary Way
+                </h2>
+
+                <div class="cute">❀</div>
+
+                <p>
+                    Forget the obvious answers. This one is
+                    about your reading habits, literary instincts,
+                    moral dilemmas and questionable fictional loyalties.
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">V · MYTHOLOGY</div>
+
+                <h2>
+                    Which Mythological Character Would You Be?
+                </h2>
+
+                <div class="cute">☙ ✧ ☙</div>
+
+                <p>
+                    Hero, trickster, tragic figure, goddess,
+                    monster or somebody who really should have
+                    thought twice before opening that mysterious door?
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">VI · THE SUPERNATURAL</div>
+
+                <h2>
+                    What Kind of Vampire Are You?
+                </h2>
+
+                <div class="cute">☾ ❦ ☽</div>
+
+                <p>
+                    Elegant aristocrat? Gothic recluse?
+                    Dramatic immortal? Or the vampire who
+                    would probably spend eternity reading?
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+            <a href="#" class="quiz-card">
+
+                <div class="quiz-number">VII · AUTHORS</div>
+
+                <h2>
+                    Which Classic Literature Author
+                    Would Definitely Write a Book About You?
+                </h2>
+
+                <div class="cute">❧ ✿ ❧</div>
+
+                <p>
+                    Would your life become an Austenian comedy,
+                    a Brontë tragedy, a Dickensian adventure,
+                    or something altogether stranger?
+                </p>
+
+                <div class="take-quiz">
+                    Take the quiz →
+                </div>
+
+            </a>
+
+
+        </main>
+
+
+        <footer>
+            Lenore's Archive · © 2026 · All rights reserved
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>
