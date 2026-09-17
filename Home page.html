@@ -1,0 +1,1002 @@
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lenore's Archive | Literature, Reviews & Reading</title>
+
+    <meta name="description"
+          content="Lenore's Archive — a literary space for book reviews, recommendations, quizzes and thoughtful explorations of literature.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Montserrat:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4eee3;
+            color: #28231f;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            padding: 16px 5%;
+
+            background: rgba(244, 238, 227, 0.96);
+            border-bottom: 1px solid #c8bcae;
+        }
+
+        nav a {
+            font-family: "Montserrat", Arial, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            padding: 9px 15px;
+
+            border: 1px solid transparent;
+
+            transition: all 0.25s ease;
+        }
+
+        nav a:hover {
+            border-color: #51433a;
+            background: #302822;
+            color: #f4eee3;
+        }
+
+
+        /* =========================
+           HERO IMAGE
+        ========================= */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 540px;
+
+            background:
+                linear-gradient(
+                    rgba(30, 25, 21, 0.15),
+                    rgba(30, 25, 21, 0.30)
+                ),
+                url("YOUR-HERO-IMAGE-HERE.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        /*
+        Replace YOUR-HERO-IMAGE-HERE.jpg
+        with your chosen header image later.
+        */
+
+        .hero-placeholder {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #817565,
+                    #453b34
+                );
+
+            color: #f4eee3;
+
+            font-family: "Montserrat", Arial, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           PROFILE PHOTO
+        ========================= */
+
+        .profile-container {
+            position: absolute;
+
+            bottom: -90px;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            padding: 7px;
+
+            background: #f4eee3;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.18);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            background: #b7a99b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: "Montserrat", Arial, sans-serif;
+            font-size: 0.65rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .intro {
+            text-align: center;
+
+            max-width: 850px;
+
+            margin: 135px auto 80px;
+
+            padding: 0 25px;
+        }
+
+        .script-heading {
+            font-family: "Parisienne", cursive;
+
+            font-size: clamp(3rem, 7vw, 5.5rem);
+
+            font-weight: normal;
+
+            line-height: 1.2;
+
+            color: #382e28;
+        }
+
+        .intro .subtitle {
+            margin-top: 18px;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.78rem;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            margin-top: 30px;
+
+            font-size: 1.25rem;
+
+            color: #51473f;
+        }
+
+
+        /* =========================
+           SECTION STRUCTURE
+        ========================= */
+
+        section {
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            padding: 75px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-family: "Parisienne", cursive;
+
+            font-size: clamp(2.7rem, 5vw, 4rem);
+
+            font-weight: normal;
+        }
+
+        .section-heading p {
+            margin-top: 10px;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.72rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #74675d;
+        }
+
+
+        /* =========================
+           WHY THIS ARCHIVE EXISTS
+        ========================= */
+
+        .motivation {
+            border-top: 1px solid #c8bcae;
+            border-bottom: 1px solid #c8bcae;
+
+            max-width: 850px;
+
+            text-align: center;
+        }
+
+        .motivation p {
+            font-size: 1.2rem;
+
+            color: #51473f;
+        }
+
+
+        /* =========================
+           ARTICLE CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 30px;
+        }
+
+        .card {
+            background: #f9f5ed;
+
+            border: 1px solid #cfc3b5;
+
+            padding: 32px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 12px 30px rgba(55, 45, 37, 0.10);
+        }
+
+        .card-label {
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.65rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #806f61;
+        }
+
+        .card h3 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 1.8rem;
+
+            font-weight: 600;
+
+            margin: 12px 0;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+
+            color: #5a5048;
+
+            margin-bottom: 20px;
+        }
+
+        .card-button {
+            display: inline-block;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.68rem;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            border-bottom: 1px solid #51433a;
+
+            padding-bottom: 3px;
+        }
+
+
+        /* =========================
+           DECORATIVE IMAGE SPACE
+        ========================= */
+
+        .decorative-image {
+            width: 100%;
+
+            min-height: 260px;
+
+            margin: 25px 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background: #ded3c5;
+
+            border: 1px solid #c6b9aa;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #65594f;
+        }
+
+
+        /* =========================
+           REVIEW EXCERPT
+        ========================= */
+
+        .excerpt {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 50px;
+
+            border-left: 3px solid #806f61;
+
+            background: #eee5d8;
+        }
+
+        .excerpt p {
+            font-size: 1.35rem;
+
+            font-style: italic;
+
+            color: #453b34;
+        }
+
+
+        /* =========================
+           CONTACT / AUTHOR
+        ========================= */
+
+        .author-section {
+            text-align: center;
+
+            border-top: 1px solid #c8bcae;
+        }
+
+        .author-section p {
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            font-size: 1.15rem;
+
+            color: #51473f;
+        }
+
+        .contact-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 13px 25px;
+
+            background: #302822;
+
+            color: #f4eee3;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.25s ease;
+        }
+
+        .contact-button:hover {
+            background: #57483d;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid #c8bcae;
+
+            color: #75685d;
+        }
+
+        footer .footer-title {
+            font-family: "Parisienne", cursive;
+
+            font-size: 2.2rem;
+
+            color: #382e28;
+        }
+
+        footer p {
+            margin-top: 8px;
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            font-size: 0.65rem;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 10px 3%;
+
+                gap: 3px;
+            }
+
+            nav a {
+                font-size: 0.6rem;
+
+                padding: 7px 8px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .profile-container {
+                width: 145px;
+                height: 145px;
+
+                bottom: -72px;
+            }
+
+            .intro {
+                margin-top: 110px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .excerpt {
+                padding: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#">Quizzes</a>
+
+        <a href="#">Book Reviews</a>
+
+        <a href="#">Recommendations</a>
+
+        <a href="#">Shared Space</a>
+
+        <a href="#">Reach the Author</a>
+
+        <a href="#">About the Author</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <div class="hero">
+
+        <div class="hero-placeholder">
+
+            Hogwarts / Hero Image
+
+        </div>
+
+
+        <div class="profile-container">
+
+            <div class="profile-photo">
+
+                Your Profile Photo
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         INTRODUCTION
+    ========================== -->
+
+    <div class="intro">
+
+        <h1 class="script-heading">
+            Lenore's Archive
+        </h1>
+
+        <div class="subtitle">
+            Literature · Reading · Ideas
+        </div>
+
+        <p class="intro-text">
+
+            A little corner of the internet devoted to books worth
+            lingering over — their stories, their characters, their
+            histories and the questions they leave behind.
+
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         ABOUT THE PROJECT
+    ========================== -->
+
+    <section class="motivation">
+
+        <div class="section-heading">
+
+            <h2>Why This Archive?</h2>
+
+            <p>The story behind the project</p>
+
+        </div>
+
+
+        <p>
+
+            Lenore's Archive was created out of a love for reading
+            closely and thinking beyond the final page. Here, books
+            are not simply rated and forgotten — they are explored,
+            questioned and connected to the wider world of literature.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         DECORATIVE IMAGE
+    ========================== -->
+
+    <section>
+
+        <div class="decorative-image">
+
+            Decorative Image Space
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURED REVIEWS
+    ========================== -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <h2>From the Archive</h2>
+
+            <p>Featured literary reviews</p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Literary Review
+                </div>
+
+                <h3>
+                    The Picture of Dorian Gray
+                </h3>
+
+                <p>
+
+                    An exploration of Oscar Wilde's novel,
+                    its obsession with beauty, morality,
+                    identity and corruption.
+
+                </p>
+
+                <a href="#" class="card-button">
+                    Read the Review →
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Coming Soon
+                </div>
+
+                <h3>
+                    A New Review
+                </h3>
+
+                <p>
+
+                    Another book will soon find its way
+                    into the archive.
+
+                </p>
+
+                <a href="#" class="card-button">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Coming Soon
+                </div>
+
+                <h3>
+                    More to Come
+                </h3>
+
+                <p>
+
+                    The archive is only beginning.
+
+                </p>
+
+                <a href="#" class="card-button">
+                    Explore →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEW EXCERPT
+    ========================== -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <h2>From a Review</h2>
+
+            <p>A glimpse into the archive</p>
+
+        </div>
+
+
+        <div class="excerpt">
+
+            <p>
+
+                “A carefully chosen excerpt from one of your
+                own reviews can appear here — giving visitors
+                a reason to continue reading.”
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOOK RECOMMENDATIONS
+    ========================== -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <h2>Books Worth Reading</h2>
+
+            <p>Personal recommendations</p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Recommendation
+                </div>
+
+                <h3>
+                    Book One
+                </h3>
+
+                <p>
+                    A short note explaining why this book
+                    deserves a place on someone's reading list.
+                </p>
+
+                <a href="#" class="card-button">
+                    Discover →
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Recommendation
+                </div>
+
+                <h3>
+                    Book Two
+                </h3>
+
+                <p>
+                    Another recommendation can live here.
+                </p>
+
+                <a href="#" class="card-button">
+                    Discover →
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-label">
+                    Recommendation
+                </div>
+
+                <h3>
+                    Book Three
+                </h3>
+
+                <p>
+                    Your recommendations will eventually
+                    become their own collection.
+                </p>
+
+                <a href="#" class="card-button">
+                    Discover →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUIZZES
+    ========================== -->
+
+    <section class="motivation">
+
+        <div class="section-heading">
+
+            <h2>Test Your Reading</h2>
+
+            <p>Quizzes & literary challenges</p>
+
+        </div>
+
+
+        <p>
+
+            Think you know your classics? Explore quizzes about
+            authors, characters, literary movements and the books
+            that have shaped literature.
+
+        </p>
+
+
+        <a href="#" class="contact-button">
+            Enter the Quizzes
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         AUTHOR
+    ========================== -->
+
+    <section class="author-section">
+
+        <div class="section-heading">
+
+            <h2>About the Author</h2>
+
+            <p>The person behind the archive</p>
+
+        </div>
+
+
+        <p>
+
+            A longer introduction about you can go here:
+            your interests, your relationship with literature,
+            why you created the archive and what you hope
+            to explore through it.
+
+        </p>
+
+
+        <a href="#" class="contact-button">
+            About the Author →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="author-section">
+
+        <div class="section-heading">
+
+            <h2>Reach the Author</h2>
+
+            <p>Questions, thoughts & correspondence</p>
+
+        </div>
+
+
+        <p>
+
+            For thoughts about a review, literary discussions,
+            collaborations or simply to say hello.
+
+        </p>
+
+
+        <a href="mailto:YOUR-EMAIL-HERE@example.com"
+           class="contact-button">
+
+            Send an Email
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-title">
+            Lenore's Archive
+        </div>
+
+        <p>
+            © 2026 Lenore's Archive · All rights reserved
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
