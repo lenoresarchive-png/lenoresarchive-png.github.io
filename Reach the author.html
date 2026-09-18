@@ -1,1 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reach the Author | Lenore's Archive</title>
+
+    <meta name="description" content="Reach the author of Lenore's Archive and share your thoughts, questions and literary discoveries.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(130, 88, 42, 0.16),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 70%,
+                    rgba(130, 88, 42, 0.13),
+                    transparent 30%
+                ),
+
+                #0e0d0c;
+
+            color: #e7dac6;
+
+            font-family: "Cormorant Garamond", serif;
+
+            min-height: 100vh;
+
+        }
+
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+
+            min-height: 82px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 5%;
+
+            border-bottom: 1px solid #73532f;
+
+        }
+
+
+        .site-title {
+
+            font-family: "Parisienne", cursive;
+
+            font-size: 35px;
+
+            font-weight: 400;
+
+            color: #d1a267;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 27px;
+
+        }
+
+
+        .nav-links a {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1.4px;
+
+            text-transform: uppercase;
+
+            color: #d5c5ae;
+
+            text-decoration: none;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #d4a461;
+
+        }
+
+
+        .nav-links a.active {
+
+            color: #d4a461;
+
+            border-bottom: 1px solid #d4a461;
+
+            padding-bottom: 7px;
+
+        }
+
+
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        .page {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 65px 35px 90px;
+
+        }
+
+
+
+        /* =========================
+           POE QUOTE
+        ========================== */
+
+        .poe-quote {
+
+            text-align: center;
+
+            max-width: 760px;
+
+            margin: 0 auto 55px;
+
+        }
+
+
+        .poe-quote p {
+
+            font-size: 24px;
+
+            line-height: 1.55;
+
+            font-style: italic;
+
+            color: #d7c5aa;
+
+        }
+
+
+        .poe-quote span {
+
+            display: block;
+
+            margin-top: 17px;
+
+            font-size: 17px;
+
+            color: #a98a61;
+
+        }
+
+
+
+        /* =========================
+           ORNAMENT
+        ========================== */
+
+        .ornament {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            margin: 25px 0;
+
+        }
+
+
+        .ornament-line {
+
+            width: 100px;
+
+            height: 1px;
+
+            background: #805c32;
+
+        }
+
+
+        .ornament-star {
+
+            color: #d4a45f;
+
+            font-size: 18px;
+
+        }
+
+
+
+        /* =========================
+           HEADING
+        ========================== */
+
+        .main-heading {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .main-heading h1 {
+
+            font-family: "Parisienne", cursive;
+
+            font-size: clamp(62px, 8vw, 100px);
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            color: #d4aa6d;
+
+        }
+
+
+        .main-heading p {
+
+            margin-top: 15px;
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #987b56;
+
+        }
+
+
+
+        /* =========================
+           IMAGE GALLERY
+        ========================== */
+
+        .gallery {
+
+            max-width: 1100px;
+
+            margin: 0 auto 70px;
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 25px;
+
+            align-items: center;
+
+        }
+
+
+        .image-frame {
+
+            position: relative;
+
+            width: 165px;
+
+            height: 165px;
+
+            margin: auto;
+
+            padding: 7px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #523817,
+                    #d4a762,
+                    #704e24,
+                    #c4944e,
+                    #4b3215
+                );
+
+            box-shadow:
+
+                0 14px 32px rgba(0, 0, 0, 0.75),
+
+                0 0 25px rgba(200, 153, 77, 0.12);
+
+            transition: transform 0.4s ease;
+
+        }
+
+
+        .image-frame:hover {
+
+            transform: translateY(-8px) scale(1.04);
+
+        }
+
+
+        /* Outer golden embroidery ring */
+
+        .image-frame::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -9px;
+
+            border: 1px solid rgba(209, 165, 96, 0.75);
+
+            border-radius: 50%;
+
+            box-shadow:
+
+                0 0 0 3px rgba(91, 62, 29, 0.35);
+
+        }
+
+
+        /* Small decorative star */
+
+        .image-frame::after {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 3px;
+
+            right: -10px;
+
+            color: #d8ac65;
+
+            font-size: 20px;
+
+            text-shadow:
+
+                0 0 8px rgba(216, 172, 101, 0.55);
+
+        }
+
+
+        .image-frame img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 2px solid #1c140c;
+
+            opacity: 1;
+
+            transition: opacity 0.7s ease;
+
+        }
+
+
+
+        /* =========================
+           AUTHOR / CONTACT AREA
+        ========================== */
+
+        .author-area {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 55px;
+
+            align-items: stretch;
+
+        }
+
+
+        .author-text {
+
+            padding: 10px 35px 10px 0;
+
+            border-right: 1px solid #73532f;
+
+        }
+
+
+        .author-text h2 {
+
+            font-family: "Parisienne", cursive;
+
+            font-size: 54px;
+
+            font-weight: 400;
+
+            color: #d3a76a;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .author-name {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #9c7d54;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .author-text p {
+
+            font-size: 19px;
+
+            line-height: 1.75;
+
+            color: #cdbca4;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .author-text em {
+
+            color: #d3b383;
+
+        }
+
+
+        .closing-line {
+
+            margin-top: 28px;
+
+            font-size: 23px !important;
+
+            font-style: italic;
+
+            color: #d6b47f !important;
+
+        }
+
+
+
+        /* =========================
+           EMAIL BOX
+        ========================== */
+
+        .contact-box {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 35px 25px;
+
+        }
+
+
+        .contact-symbol {
+
+            font-size: 43px;
+
+            color: #c99b59;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-box h2 {
+
+            font-family: "Parisienne", cursive;
+
+            font-size: 51px;
+
+            font-weight: 400;
+
+            color: #d3a76a;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-box p {
+
+            max-width: 330px;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            font-style: italic;
+
+            color: #c8b69c;
+
+        }
+
+
+        .email-button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 34px;
+
+            border: 1px solid #b4874d;
+
+            color: #e1c493;
+
+            background: rgba(145, 98, 40, 0.09);
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .email-button:hover {
+
+            background: rgba(185, 139, 73, 0.17);
+
+            box-shadow:
+
+                0 0 22px rgba(190, 145, 75, 0.18);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* =========================
+           BOTTOM ORNAMENT
+        ========================== */
+
+        .bottom-ornament {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 80px auto 0;
+
+            gap: 15px;
+
+        }
+
+
+        .bottom-ornament span:first-child,
+        .bottom-ornament span:last-child {
+
+            width: 150px;
+
+            height: 1px;
+
+            background: #76552f;
+
+        }
+
+
+        .bottom-ornament span:nth-child(2) {
+
+            color: #d2a360;
+
+            font-size: 25px;
+
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            color: #806d56;
+
+            font-size: 15px;
+
+            font-style: italic;
+
+        }
+
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1100px) {
+
+            .gallery {
+
+                grid-template-columns: repeat(3, 1fr);
+
+                row-gap: 45px;
+
+            }
+
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                padding: 25px 15px;
+
+            }
+
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                gap: 14px 18px;
+
+            }
+
+
+            .author-area {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .author-text {
+
+                border-right: none;
+
+                border-bottom: 1px solid #73532f;
+
+                padding: 10px 0 40px;
+
+            }
+
+
+            .gallery {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+        }
+
+
+
+        @media (max-width: 500px) {
+
+            .page {
+
+                padding: 50px 20px 70px;
+
+            }
+
+
+            .poe-quote p {
+
+                font-size: 20px;
+
+            }
+
+
+            .gallery {
+
+                grid-template-columns: 1fr;
+
+                gap: 38px;
+
+            }
+
+
+            .image-frame {
+
+                width: 185px;
+
+                height: 185px;
+
+            }
+
+
+            .author-text h2 {
+
+                font-size: 47px;
+
+            }
+
+
+            .contact-box h2 {
+
+                font-size: 45px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <a class="site-title" href="index.html">
+            Lenore's Archive
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="quizzes.html">
+                Quizzes
+            </a>
+
+            <a href="reviews.html">
+                Book Reviews
+            </a>
+
+            <a href="recommendations.html">
+                Recommendations
+            </a>
+
+            <a href="Reach%20the%20author.html" class="active">
+                Reach the Author
+            </a>
+
+            <a href="about.html">
+                About the Author
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         MAIN PAGE
+    ========================== -->
+
+    <main class="page">
+
+
+        <!-- POE -->
+
+        <section class="poe-quote">
+
+            <p>
+                “And the Raven, never flitting, still is sitting,
+                still is sitting”
+            </p>
+
+            <span>
+                — Edgar Allan Poe, <em>The Raven</em>
+            </span>
+
+        </section>
+
+
+
+        <!-- ORNAMENT -->
+
+        <div class="ornament">
+
+            <span class="ornament-line"></span>
+
+            <span class="ornament-star">✦</span>
+
+            <span class="ornament-line"></span>
+
+        </div>
+
+
+
+        <!-- HEADING -->
+
+        <section class="main-heading">
+
+            <h1>
+                Reach the Author
+            </h1>
+
+            <p>
+                A letter across the page
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             ROTATING IMAGE CIRCLES
+        ========================== -->
+
+        <section class="gallery">
+
+
+            <div class="image-frame">
+
+                <img
+                    src="images/Aesthetic%20writing%20desk.jpg"
+                    alt="An aesthetic writing desk"
+                    data-images="images/Aesthetic%20writing%20desk.jpg|images/Autumn%20hallway.jpg"
+                >
+
+            </div>
+
+
+
+            <div class="image-frame">
+
+                <img
+                    src="images/Brown%20lace%20background.jpg"
+                    alt="Brown lace background"
+                    data-images="images/Brown%20lace%20background.jpg|images/Carpet%20background.jpg"
+                >
+
+            </div>
+
+
+
+            <div class="image-frame">
+
+                <img
+                    src="images/Fire%20place%20cat.jpg"
+                    alt="A cat beside a fireplace"
+                    data-images="images/Fire%20place%20cat.jpg|images/Flower%20print%20background.jpg"
+                >
+
+            </div>
+
+
+
+            <div class="image-frame">
+
+                <img
+                    src="images/Hands%20joining.jpg"
+                    alt="Hands joining"
+                    data-images="images/Hands%20joining.jpg|images/Hogwarts%20background.jpg"
+                >
+
+            </div>
+
+
+
+            <div class="image-frame">
+
+                <img
+                    src="images/Star%20catching.jpg"
+                    alt="A woman reaching towards the stars"
+                    data-images="images/Star%20catching.jpg|images/Woman%20with%20wine.jpg"
+                >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             AUTHOR + EMAIL
+        ========================== -->
+
+        <section class="author-area">
+
+
+            <div class="author-text">
+
+
+                <h2>
+                    A quiet mind,
+                    a curious heart...
+                </h2>
+
+
+                <div class="author-name">
+                    Sharanya Mridha
+                </div>
+
+
+                <p>
+                    I have always been drawn to the strange little spaces
+                    that exist between words — the things a story says
+                    quietly, the questions it leaves behind, and the
+                    feelings that remain long after the final page has
+                    been turned.
+                </p>
+
+
+                <p>
+                    Lenore's Archive grew from that fascination. It is my
+                    little corner of the literary world: a place for stories
+                    to be examined, ideas to wander, questions to be asked,
+                    and discoveries to be shared.
+                </p>
+
+
+                <p>
+                    I believe reading is more than simply reaching the end
+                    of a book. Sometimes it is an encounter. Sometimes it
+                    is an argument. Sometimes it is a mirror, and sometimes
+                    it opens a door into somewhere entirely unfamiliar.
+                </p>
+
+
+                <p>
+                    The reviews here are also meant to be useful companions
+                    for students who are discovering literature and trying
+                    to understand what a novel can truly offer them. They
+                    explore not only what makes a book worth reading, but
+                    why a student might choose to study it, what can be
+                    learned from its characters, themes and language, and
+                    how approaching it thoughtfully can make literary
+                    analysis feel less like a task and more like an
+                    exploration.
+                </p>
+
+
+                <p>
+                    Along the way, these books can become tools for enriching
+                    vocabulary, developing a more attentive relationship
+                    with language, and learning how to notice the details
+                    through which writers construct meaning. My hope is
+                    that all of this can happen in a way that feels
+                    <em>curious, enjoyable and enriching</em> rather than
+                    mechanical.
+                </p>
+
+
+                <p>
+                    But this Archive is not meant to belong only to its
+                    author. I imagine it as a quiet room with the door
+                    left open — a space where readers can arrive with
+                    their own interpretations, curiosities and questions.
+                    No two people enter a story carrying exactly the same
+                    world within them, and that is part of what makes
+                    literature endlessly fascinating.
+                </p>
+
+
+                <p>
+                    So, if you have found your way here, stay for a while.
+                    Read something. Question something. Disagree with
+                    something. Discover something.
+                </p>
+
+
+                <p class="closing-line">
+                    Perhaps the best conversations are the ones that begin
+                    between the pages.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-box">
+
+
+                <div class="contact-symbol">
+                    ✉
+                </div>
+
+
+                <h2>
+                    Write to Me
+                </h2>
+
+
+                <p>
+                    Have a question, a thought, a literary discovery,
+                    or simply something you would like to leave in the
+                    margins?
+                </p>
+
+
+                <p>
+                    I would love to hear from you.
+                </p>
+
+
+                <a
+                    class="email-button"
+                    href="mailto:sharanyamridha10@gmail.com"
+                >
+                    Send an Email ✦
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- BOTTOM ORNAMENT -->
+
+        <div class="bottom-ornament">
+
+            <span></span>
+
+            <span>✦</span>
+
+            <span></span>
+
+        </div>
+
+
+    </main>
+
+
+
+    <foote
