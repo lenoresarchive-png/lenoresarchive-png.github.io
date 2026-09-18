@@ -1,6 +1,7 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,12 +10,16 @@
     <meta name="description"
           content="Lenore's Archive — a literary space for book reviews, recommendations, quizzes and thoughtful explorations of literature.">
 
-    <!-- Google Fonts -->
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Montserrat:wght@400;500;600&display=swap"
           rel="stylesheet">
+
 
     <style>
 
@@ -47,7 +52,7 @@
 
         /* =========================
            NAVIGATION
-        ========================= */
+        ========================== */
 
         nav {
             position: sticky;
@@ -63,13 +68,19 @@
             padding: 16px 5%;
 
             background: rgba(244, 238, 227, 0.96);
+
             border-bottom: 1px solid #c8bcae;
+
+            box-shadow: 0 3px 15px rgba(50, 40, 30, 0.08);
         }
 
         nav a {
             font-family: "Montserrat", Arial, sans-serif;
+
             font-size: 0.75rem;
+
             letter-spacing: 1.5px;
+
             text-transform: uppercase;
 
             padding: 9px 15px;
@@ -81,75 +92,105 @@
 
         nav a:hover {
             border-color: #51433a;
+
             background: #302822;
+
             color: #f4eee3;
         }
 
 
         /* =========================
-           HERO IMAGE
-        ========================= */
+           HERO
+        ========================== */
 
         .hero {
             position: relative;
+
             width: 100%;
-            height: 540px;
+
+            height: 570px;
 
             background:
                 linear-gradient(
-                    rgba(30, 25, 21, 0.15),
-                    rgba(30, 25, 21, 0.30)
+                    rgba(20, 15, 12, 0.18),
+                    rgba(20, 15, 12, 0.42)
                 ),
-                url("YOUR-HERO-IMAGE-HERE.jpg");
+                url("images/Hogwarts%20background.jpg");
 
             background-size: cover;
+
             background-position: center;
 
             display: flex;
+
             justify-content: center;
+
             align-items: flex-end;
+
+            box-shadow:
+                inset 0 -80px 100px rgba(20, 15, 12, 0.35);
         }
 
-        /*
-        Replace YOUR-HERO-IMAGE-HERE.jpg
-        with your chosen header image later.
-        */
 
-        .hero-placeholder {
+        /* =========================
+           HERO TITLE
+        ========================== */
+
+        .hero-title {
             position: absolute;
-            inset: 0;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            top: 35%;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #817565,
-                    #453b34
-                );
+            left: 50%;
 
-            color: #f4eee3;
+            transform: translate(-50%, -50%);
+
+            width: 90%;
+
+            text-align: center;
+
+            color: #fffaf0;
+
+            text-shadow:
+                0 3px 15px rgba(0,0,0,0.65),
+                0 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .hero-title h1 {
+            font-family: "Parisienne", cursive;
+
+            font-size: clamp(4rem, 10vw, 8rem);
+
+            font-weight: normal;
+
+            line-height: 1.1;
+        }
+
+        .hero-title p {
+            margin-top: 12px;
 
             font-family: "Montserrat", Arial, sans-serif;
+
             font-size: 0.8rem;
-            letter-spacing: 3px;
+
+            letter-spacing: 5px;
+
             text-transform: uppercase;
         }
 
 
         /* =========================
            PROFILE PHOTO
-        ========================= */
+        ========================== */
 
         .profile-container {
             position: absolute;
 
-            bottom: -90px;
+            bottom: -92px;
 
-            width: 180px;
-            height: 180px;
+            width: 185px;
+
+            height: 185px;
 
             border-radius: 50%;
 
@@ -157,58 +198,42 @@
 
             background: #f4eee3;
 
-            box-shadow: 0 5px 25px rgba(0,0,0,0.18);
+            box-shadow:
+                0 7px 30px rgba(0,0,0,0.30),
+                0 0 0 2px #806f61;
         }
 
         .profile-photo {
             width: 100%;
+
             height: 100%;
 
             border-radius: 50%;
 
             object-fit: cover;
 
-            background: #b7a99b;
+            display: block;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-family: "Montserrat", Arial, sans-serif;
-            font-size: 0.65rem;
-            text-align: center;
-            letter-spacing: 1px;
+            border: 4px solid #f4eee3;
         }
 
 
         /* =========================
            INTRODUCTION
-        ========================= */
+        ========================== */
 
         .intro {
             text-align: center;
 
             max-width: 850px;
 
-            margin: 135px auto 80px;
+            margin: 140px auto 85px;
 
             padding: 0 25px;
         }
 
-        .script-heading {
-            font-family: "Parisienne", cursive;
-
-            font-size: clamp(3rem, 7vw, 5.5rem);
-
-            font-weight: normal;
-
-            line-height: 1.2;
-
-            color: #382e28;
-        }
-
         .intro .subtitle {
-            margin-top: 18px;
+            margin-top: 12px;
 
             font-family: "Montserrat", Arial, sans-serif;
 
@@ -222,7 +247,7 @@
         .intro-text {
             margin-top: 30px;
 
-            font-size: 1.25rem;
+            font-size: 1.3rem;
 
             color: #51473f;
         }
@@ -230,7 +255,7 @@
 
         /* =========================
            SECTION STRUCTURE
-        ========================= */
+        ========================== */
 
         section {
             max-width: 1150px;
@@ -249,9 +274,11 @@
         .section-heading h2 {
             font-family: "Parisienne", cursive;
 
-            font-size: clamp(2.7rem, 5vw, 4rem);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
 
             font-weight: normal;
+
+            line-height: 1.2;
         }
 
         .section-heading p {
@@ -270,28 +297,195 @@
 
 
         /* =========================
-           WHY THIS ARCHIVE EXISTS
-        ========================= */
+           IMAGE BANNER
+        ========================== */
 
-        .motivation {
-            border-top: 1px solid #c8bcae;
-            border-bottom: 1px solid #c8bcae;
+        .image-banner {
+            position: relative;
 
-            max-width: 850px;
+            min-height: 360px;
+
+            margin: 25px auto 60px;
+
+            max-width: 1050px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
 
             text-align: center;
+
+            background-image:
+                linear-gradient(
+                    rgba(35, 20, 15, 0.38),
+                    rgba(35, 20, 15, 0.48)
+                ),
+                url("images/Stack%20of%20books.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid #a89583;
+
+            box-shadow:
+                0 12px 35px rgba(55,45,37,0.16);
+        }
+
+        .image-banner-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 700px;
+
+            padding: 40px;
+
+            color: #fffaf0;
+
+            text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+        }
+
+        .image-banner-content h2 {
+            font-family: "Parisienne", cursive;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+
+            font-weight: normal;
+        }
+
+        .image-banner-content p {
+            margin-top: 15px;
+
+            font-size: 1.25rem;
+        }
+
+
+        /* =========================
+           MOTIVATION / RED EMBROIDERY
+        ========================== */
+
+        .motivation {
+            position: relative;
+
+            max-width: 900px;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            border: 1px solid #7b332e;
+
+            color: #fff8ed;
+
+            background:
+                linear-gradient(
+                    rgba(70, 20, 18, 0.72),
+                    rgba(70, 20, 18, 0.72)
+                ),
+                url("images/Red%20embroidery%20background.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            box-shadow:
+                0 12px 35px rgba(80,30,25,0.18);
+        }
+
+        .motivation .section-heading h2 {
+            color: #fff8ed;
+        }
+
+        .motivation .section-heading p {
+            color: #e8d1c8;
         }
 
         .motivation p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
 
-            color: #51473f;
+            color: #fff5ea;
+        }
+
+
+        /* =========================
+           IMAGE STRIP
+        ========================== */
+
+        .image-strip {
+            max-width: 1100px;
+
+            margin: 30px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            padding: 0 7%;
+        }
+
+        .image-tile {
+            height: 260px;
+
+            border: 1px solid #bcae9f;
+
+            background-size: cover;
+
+            background-position: center;
+
+            box-shadow:
+                0 8px 25px rgba(50,40,30,0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .image-tile:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 14px 30px rgba(50,40,30,0.18);
+        }
+
+        .tile-books {
+            background-image:
+                linear-gradient(
+                    rgba(20,15,10,0.08),
+                    rgba(20,15,10,0.08)
+                ),
+                url("images/Stack%20of%20books.jpg");
+        }
+
+        .tile-cat {
+            background-image:
+                linear-gradient(
+                    rgba(20,15,10,0.08),
+                    rgba(20,15,10,0.08)
+                ),
+                url("images/Fire%20place%20cat.jpg");
+        }
+
+        .tile-cathedral {
+            background-image:
+                linear-gradient(
+                    rgba(20,15,10,0.08),
+                    rgba(20,15,10,0.08)
+                ),
+                url("images/Sunlight%20cathedral.jpg");
         }
 
 
         /* =========================
            ARTICLE CARDS
-        ========================= */
+        ========================== */
 
         .cards {
             display: grid;
@@ -303,11 +497,15 @@
         }
 
         .card {
+            position: relative;
+
             background: #f9f5ed;
 
             border: 1px solid #cfc3b5;
 
             padding: 32px;
+
+            overflow: hidden;
 
             transition:
                 transform 0.25s ease,
@@ -315,9 +513,10 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
 
-            box-shadow: 0 12px 30px rgba(55, 45, 37, 0.10);
+            box-shadow:
+                0 15px 35px rgba(55,45,37,0.13);
         }
 
         .card-label {
@@ -335,7 +534,7 @@
         .card h3 {
             font-family: "Cormorant Garamond", Georgia, serif;
 
-            font-size: 1.8rem;
+            font-size: 1.9rem;
 
             font-weight: 600;
 
@@ -343,7 +542,7 @@
         }
 
         .card p {
-            font-size: 1.05rem;
+            font-size: 1.08rem;
 
             color: #5a5048;
 
@@ -364,19 +563,89 @@
             border-bottom: 1px solid #51433a;
 
             padding-bottom: 3px;
+
+            transition: 0.2s ease;
+        }
+
+        .card-button:hover {
+            letter-spacing: 2px;
         }
 
 
         /* =========================
-           DECORATIVE IMAGE SPACE
-        ========================= */
+           REVIEW SECTION DECORATION
+        ========================== */
 
-        .decorative-image {
-            width: 100%;
+        .review-section {
+            position: relative;
+        }
 
-            min-height: 260px;
+        .review-section::before {
+            content: "❦";
 
-            margin: 25px 0;
+            display: block;
+
+            text-align: center;
+
+            font-size: 2rem;
+
+            color: #806f61;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           REVIEW EXCERPT
+        ========================== */
+
+        .excerpt {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 55px;
+
+            border-left: 4px solid #7b332e;
+
+            background:
+                linear-gradient(
+                    rgba(75, 27, 24, 0.73),
+                    rgba(75, 27, 24, 0.73)
+                ),
+                url("images/Red%20embroidery%20background.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            box-shadow:
+                0 10px 30px rgba(70,30,25,0.15);
+        }
+
+        .excerpt p {
+            font-size: 1.4rem;
+
+            font-style: italic;
+
+            color: #fff7ed;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           SECOND IMAGE FEATURE
+        ========================== */
+
+        .feature-image {
+            position: relative;
+
+            min-height: 330px;
+
+            max-width: 950px;
+
+            margin: 30px auto;
 
             display: flex;
 
@@ -386,73 +655,103 @@
 
             text-align: center;
 
-            background: #ded3c5;
+            overflow: hidden;
 
-            border: 1px solid #c6b9aa;
+            background:
+                linear-gradient(
+                    rgba(30,20,15,0.30),
+                    rgba(30,20,15,0.45)
+                ),
+                url("images/White%20lilies.jpg");
 
-            font-family: "Montserrat", Arial, sans-serif;
+            background-size: cover;
 
-            font-size: 0.7rem;
+            background-position: center;
 
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            color: #65594f;
+            border: 1px solid #b9aa9b;
         }
 
+        .feature-image-content {
+            padding: 40px;
 
-        /* =========================
-           REVIEW EXCERPT
-        ========================= */
+            color: white;
 
-        .excerpt {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 50px;
-
-            border-left: 3px solid #806f61;
-
-            background: #eee5d8;
+            text-shadow:
+                0 2px 10px rgba(0,0,0,0.6);
         }
 
-        .excerpt p {
-            font-size: 1.35rem;
+        .feature-image-content h2 {
+            font-family: "Parisienne", cursive;
 
-            font-style: italic;
+            font-size: 4rem;
 
-            color: #453b34;
+            font-weight: normal;
         }
 
-
-        /* =========================
-           CONTACT / AUTHOR
-        ========================= */
-
-        .author-section {
-            text-align: center;
-
-            border-top: 1px solid #c8bcae;
-        }
-
-        .author-section p {
-            max-width: 650px;
-
-            margin: 20px auto;
+        .feature-image-content p {
+            margin-top: 8px;
 
             font-size: 1.15rem;
-
-            color: #51473f;
         }
+
+
+        /* =========================
+           QUIZ SECTION
+        ========================== */
+
+        .quiz-section {
+            position: relative;
+
+            max-width: 900px;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            color: #f8f2e8;
+
+            background:
+                linear-gradient(
+                    rgba(25, 47, 64, 0.80),
+                    rgba(25, 47, 64, 0.80)
+                ),
+                url("images/Hands%20joining.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid #314b5c;
+
+            box-shadow:
+                0 12px 35px rgba(25,45,60,0.18);
+        }
+
+        .quiz-section .section-heading h2 {
+            color: #fffaf1;
+        }
+
+        .quiz-section .section-heading p {
+            color: #d4dfe4;
+        }
+
+        .quiz-section > p {
+            font-size: 1.2rem;
+
+            color: #f4f0e9;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
 
         .contact-button {
             display: inline-block;
 
-            margin-top: 20px;
+            margin-top: 25px;
 
-            padding: 13px 25px;
+            padding: 13px 27px;
 
             background: #302822;
 
@@ -466,20 +765,142 @@
 
             text-transform: uppercase;
 
+            border: 1px solid #302822;
+
             transition: 0.25s ease;
         }
 
         .contact-button:hover {
             background: #57483d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           AUTHOR SECTION
+        ========================== */
+
+        .author-section {
+            text-align: center;
+
+            border-top: 1px solid #c8bcae;
+        }
+
+        .author-section p {
+            max-width: 680px;
+
+            margin: 20px auto;
+
+            font-size: 1.18rem;
+
+            color: #51473f;
+        }
+
+
+        /* =========================
+           AUTHOR IMAGE FEATURE
+        ========================== */
+
+        .author-image {
+            width: 180px;
+
+            height: 180px;
+
+            margin: 0 auto 30px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    rgba(30,20,15,0.20),
+                    rgba(30,20,15,0.20)
+                ),
+                url("images/Star%20catching.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 6px solid #f4eee3;
+
+            box-shadow:
+                0 0 0 1px #9c8c7b,
+                0 8px 25px rgba(50,40,30,0.16);
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+
+        .contact-section {
+            position: relative;
+
+            text-align: center;
+
+            max-width: 1000px;
+
+            overflow: hidden;
+
+            color: #fff7ed;
+
+            background:
+                linear-gradient(
+                    rgba(50, 24, 20, 0.76),
+                    rgba(50, 24, 20, 0.76)
+                ),
+                url("images/Carpet%20background.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            border: 1px solid #8d6257;
+
+            box-shadow:
+                0 12px 35px rgba(60,30,25,0.15);
+        }
+
+        .contact-section .section-heading h2 {
+            color: #fff7ed;
+        }
+
+        .contact-section .section-heading p {
+            color: #ead4ca;
+        }
+
+        .contact-section p {
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            font-size: 1.18rem;
+
+            color: #fff3e9;
+        }
+
+        .contact-section .contact-button {
+            background: #f4eee3;
+
+            color: #302822;
+
+            border-color: #f4eee3;
+        }
+
+        .contact-section .contact-button:hover {
+            background: #fffaf2;
         }
 
 
         /* =========================
            FOOTER
-        ========================= */
+        ========================== */
 
         footer {
-            padding: 45px 7%;
+            margin-top: 30px;
+
+            padding: 50px 7%;
 
             text-align: center;
 
@@ -491,7 +912,7 @@
         footer .footer-title {
             font-family: "Parisienne", cursive;
 
-            font-size: 2.2rem;
+            font-size: 2.5rem;
 
             color: #382e28;
         }
@@ -509,9 +930,9 @@
 
         /* =========================
            MOBILE
-        ========================= */
+        ========================== */
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
             nav {
                 padding: 10px 3%;
@@ -523,14 +944,31 @@
                 font-size: 0.6rem;
 
                 padding: 7px 8px;
+
+                letter-spacing: 1px;
             }
 
             .hero {
-                height: 400px;
+                height: 430px;
+            }
+
+            .hero-title {
+                top: 33%;
+            }
+
+            .hero-title h1 {
+                font-size: 4rem;
+            }
+
+            .hero-title p {
+                font-size: 0.62rem;
+
+                letter-spacing: 3px;
             }
 
             .profile-container {
                 width: 145px;
+
                 height: 145px;
 
                 bottom: -72px;
@@ -544,447 +982,20 @@
                 padding: 55px 6%;
             }
 
-            .excerpt {
-                padding: 30px;
+            .image-strip {
+                grid-template-columns: 1fr;
+
+                padding: 0 6%;
             }
-        }
 
-    </style>
-</head>
+            .image-tile {
+                height: 230px;
+            }
 
+            .image-banner {
+                min-height: 300px;
+            }
 
-<body>
-
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
-    <nav>
-
-<a href="index.html">Home</a>
-<a href="quizzes.html">Quizzes</a>
-<a href="reviews.html">Book Reviews</a>
-<a href="recommendations.html">Recommendations</a>
-<a href="Reach%20the%20author.html">Reach the Author</a>
-<a href="about.html">About the Author</a>
-
-    </nav>
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <div class="hero">
-
-        <div class="hero-placeholder">
-
-            Hogwarts / Hero Image
-
-        </div>
-
-
-        <div class="profile-container">
-
-            <div class="profile-photo">
-
-                Your Profile Photo
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         INTRODUCTION
-    ========================== -->
-
-    <div class="intro">
-
-        <h1 class="script-heading">
-            Lenore's Archive
-        </h1>
-
-        <div class="subtitle">
-            Literature · Reading · Ideas
-        </div>
-
-        <p class="intro-text">
-
-            A little corner of the internet devoted to books worth
-            lingering over — their stories, their characters, their
-            histories and the questions they leave behind.
-
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         ABOUT THE PROJECT
-    ========================== -->
-
-    <section class="motivation">
-
-        <div class="section-heading">
-
-            <h2>Why This Archive?</h2>
-
-            <p>The story behind the project</p>
-
-        </div>
-
-
-        <p>
-
-            Lenore's Archive was created out of a love for reading
-            closely and thinking beyond the final page. Here, books
-            are not simply rated and forgotten — they are explored,
-            questioned and connected to the wider world of literature.
-
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         DECORATIVE IMAGE
-    ========================== -->
-
-    <section>
-
-        <div class="decorative-image">
-
-            Decorative Image Space
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         FEATURED REVIEWS
-    ========================== -->
-
-    <section>
-
-        <div class="section-heading">
-
-            <h2>From the Archive</h2>
-
-            <p>Featured literary reviews</p>
-
-        </div>
-
-
-        <div class="cards">
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Literary Review
-                </div>
-
-                <h3>
-                    The Picture of Dorian Gray
-                </h3>
-
-                <p>
-
-                    An exploration of Oscar Wilde's novel,
-                    its obsession with beauty, morality,
-                    identity and corruption.
-
-                </p>
-
-                <a href="#" class="card-button">
-                    Read the Review →
-                </a>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Coming Soon
-                </div>
-
-                <h3>
-                    A New Review
-                </h3>
-
-                <p>
-
-                    Another book will soon find its way
-                    into the archive.
-
-                </p>
-
-                <a href="#" class="card-button">
-                    Explore →
-                </a>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Coming Soon
-                </div>
-
-                <h3>
-                    More to Come
-                </h3>
-
-                <p>
-
-                    The archive is only beginning.
-
-                </p>
-
-                <a href="#" class="card-button">
-                    Explore →
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         REVIEW EXCERPT
-    ========================== -->
-
-    <section>
-
-        <div class="section-heading">
-
-            <h2>From a Review</h2>
-
-            <p>A glimpse into the archive</p>
-
-        </div>
-
-
-        <div class="excerpt">
-
-            <p>
-
-                “A carefully chosen excerpt from one of your
-                own reviews can appear here — giving visitors
-                a reason to continue reading.”
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         BOOK RECOMMENDATIONS
-    ========================== -->
-
-    <section>
-
-        <div class="section-heading">
-
-            <h2>Books Worth Reading</h2>
-
-            <p>Personal recommendations</p>
-
-        </div>
-
-
-        <div class="cards">
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Recommendation
-                </div>
-
-                <h3>
-                    Book One
-                </h3>
-
-                <p>
-                    A short note explaining why this book
-                    deserves a place on someone's reading list.
-                </p>
-
-                <a href="#" class="card-button">
-                    Discover →
-                </a>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Recommendation
-                </div>
-
-                <h3>
-                    Book Two
-                </h3>
-
-                <p>
-                    Another recommendation can live here.
-                </p>
-
-                <a href="#" class="card-button">
-                    Discover →
-                </a>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-label">
-                    Recommendation
-                </div>
-
-                <h3>
-                    Book Three
-                </h3>
-
-                <p>
-                    Your recommendations will eventually
-                    become their own collection.
-                </p>
-
-                <a href="#" class="card-button">
-                    Discover →
-                </a>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         QUIZZES
-    ========================== -->
-
-    <section class="motivation">
-
-        <div class="section-heading">
-
-            <h2>Test Your Reading</h2>
-
-            <p>Quizzes & literary challenges</p>
-
-        </div>
-
-
-        <p>
-
-            Think you know your classics? Explore quizzes about
-            authors, characters, literary movements and the books
-            that have shaped literature.
-
-        </p>
-
-
-        <a href="#" class="contact-button">
-            Enter the Quizzes
-        </a>
-
-    </section>
-
-
-    <!-- =========================
-         AUTHOR
-    ========================== -->
-
-    <section class="author-section">
-
-        <div class="section-heading">
-
-            <h2>About the Author</h2>
-
-            <p>The person behind the archive</p>
-
-        </div>
-
-
-        <p>
-
-            A longer introduction about you can go here:
-            your interests, your relationship with literature,
-            why you created the archive and what you hope
-            to explore through it.
-
-        </p>
-
-
-        <a href="#" class="contact-button">
-            About the Author →
-        </a>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section class="author-section">
-
-        <div class="section-heading">
-
-            <h2>Reach the Author</h2>
-
-            <p>Questions, thoughts & correspondence</p>
-
-        </div>
-
-
-        <p>
-
-            For thoughts about a review, literary discussions,
-            collaborations or simply to say hello.
-
-        </p>
-
-
-        <a href="mailto:sharanyamridha10@gmail.com">Send an Email</a>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-title">
-            Lenore's Archive
-        </div>
-
-        <p>
-            © 2026 Lenore's Archive · All rights reserved
-        </p>
-
-    </footer>
-
-
-</body>
-</html>
+            .image-banner-content {
+                padding: 25px;
+       
