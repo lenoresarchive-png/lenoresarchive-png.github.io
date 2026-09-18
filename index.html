@@ -1,1043 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lenore's Archive | Literature, Reviews & Reading</title>
-
-    <meta name="description"
-          content="Lenore's Archive — a literary space for book reviews, recommendations, quizzes and thoughtful explorations of literature.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Montserrat:wght@400;500;600&display=swap"
-          rel="stylesheet">
-
-
-    <style>
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f4eee3;
-            color: #28231f;
-            font-family: "Cormorant Garamond", Georgia, serif;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-
-            padding: 16px 5%;
-
-            background: rgba(244, 238, 227, 0.96);
-            border-bottom: 1px solid #c8bcae;
-        }
-
-        nav a {
-            font-family: "Montserrat", Arial, sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-
-            padding: 9px 15px;
-
-            border: 1px solid transparent;
-
-            transition: all 0.25s ease;
-        }
-
-        nav a:hover {
-            border-color: #51433a;
-            background: #302822;
-            color: #f4eee3;
-        }
-
-
-        /* =========================
-           HERO IMAGE
-        ========================= */
-
-        .hero {
-            position: relative;
-
-            width: 100%;
-            height: 540px;
-
-            background:
-                linear-gradient(
-                    rgba(30, 25, 21, 0.20),
-                    rgba(30, 25, 21, 0.35)
-                ),
-                url("images/Hogwarts%20background.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-
-        /* =========================
-           HERO TITLE
-        ========================= */
-
-        .hero-title {
-            position: absolute;
-
-            top: 42%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            width: 90%;
-
-            text-align: center;
-
-            color: #fff8ed;
-
-            text-shadow:
-                0 3px 12px rgba(0,0,0,0.65);
-        }
-
-        .hero-title h1 {
-            font-family: "Parisienne", cursive;
-
-            font-size: clamp(4rem, 9vw, 7rem);
-
-            font-weight: normal;
-
-            line-height: 1.2;
-        }
-
-        .hero-title p {
-            margin-top: 10px;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.75rem;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================
-           PROFILE PHOTO
-        ========================= */
-
-        .profile-container {
-            position: absolute;
-
-            bottom: -90px;
-
-            width: 180px;
-            height: 180px;
-
-            border-radius: 50%;
-
-            padding: 7px;
-
-            background: #f4eee3;
-
-            box-shadow:
-                0 5px 25px rgba(0,0,0,0.22);
-        }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            display: block;
-
-            border: 2px solid #c8bcae;
-        }
-
-
-        /* =========================
-           INTRODUCTION
-        ========================= */
-
-        .intro {
-            text-align: center;
-
-            max-width: 850px;
-
-            margin: 135px auto 80px;
-
-            padding: 0 25px;
-        }
-
-        .intro .subtitle {
-            margin-top: 10px;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.78rem;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-        }
-
-        .intro-text {
-            margin-top: 30px;
-
-            font-size: 1.25rem;
-
-            color: #51473f;
-        }
-
-
-        /* =========================
-           SECTION STRUCTURE
-        ========================= */
-
-        section {
-            max-width: 1150px;
-
-            margin: 0 auto;
-
-            padding: 75px 7%;
-        }
-
-        .section-heading {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .section-heading h2 {
-            font-family: "Parisienne", cursive;
-
-            font-size: clamp(2.7rem, 5vw, 4rem);
-
-            font-weight: normal;
-        }
-
-        .section-heading p {
-            margin-top: 10px;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.72rem;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            color: #74675d;
-        }
-
-
-        /* =========================
-           WHY THIS ARCHIVE EXISTS
-        ========================= */
-
-        .motivation {
-            position: relative;
-
-            max-width: 850px;
-
-            text-align: center;
-
-            color: #fff8ed;
-
-            background:
-                linear-gradient(
-                    rgba(60, 25, 22, 0.72),
-                    rgba(60, 25, 22, 0.72)
-                ),
-                url("images/Red%20embroidery%20background.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            border-top: 1px solid #8d4c45;
-            border-bottom: 1px solid #8d4c45;
-
-            box-shadow:
-                0 8px 25px rgba(55, 35, 30, 0.12);
-        }
-
-        .motivation .section-heading h2 {
-            color: #fff8ed;
-        }
-
-        .motivation .section-heading p {
-            color: #ead5cc;
-        }
-
-        .motivation p {
-            font-size: 1.2rem;
-
-            color: #fff4e9;
-        }
-
-
-        /* =========================
-           DECORATIVE IMAGE AREA
-        ========================= */
-
-        .decorative-image {
-            width: 100%;
-
-            min-height: 300px;
-
-            margin: 25px 0;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    rgba(20, 15, 10, 0.20),
-                    rgba(20, 15, 10, 0.20)
-                ),
-                url("images/Aesthetic%20writing%20desk.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-
-            border: 1px solid #c6b9aa;
-
-            box-shadow:
-                0 8px 25px rgba(55,45,37,0.10);
-        }
-
-        .decorative-image span {
-            padding: 15px 25px;
-
-            background: rgba(244, 238, 227, 0.82);
-
-            color: #40362f;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.7rem;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================
-           IMAGE ROW
-        ========================= */
-
-        .image-row {
-            max-width: 1150px;
-
-            margin: 0 auto;
-
-            padding: 10px 7% 60px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-        .image-box {
-            height: 250px;
-
-            background-size: cover;
-
-            background-position: center;
-
-            border: 1px solid #c6b9aa;
-
-            box-shadow:
-                0 8px 25px rgba(55,45,37,0.12);
-        }
-
-        .image-one {
-            background-image:
-                url("images/Autumn%20hallway.jpg");
-        }
-
-        .image-two {
-            background-image:
-                url("images/Fire%20place%20cat.jpg");
-        }
-
-        .image-three {
-            background-image:
-                url("images/Sunlight%20cathedral.jpg");
-        }
-
-
-        /* =========================
-           ARTICLE CARDS
-        ========================= */
-
-        .cards {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-
-            gap: 30px;
-        }
-
-        .card {
-            background: #f9f5ed;
-
-            border: 1px solid #cfc3b5;
-
-            padding: 32px;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 12px 30px rgba(55, 45, 37, 0.10);
-        }
-
-        .card-label {
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.65rem;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            color: #806f61;
-        }
-
-        .card h3 {
-            font-family: "Cormorant Garamond", Georgia, serif;
-
-            font-size: 1.8rem;
-
-            font-weight: 600;
-
-            margin: 12px 0;
-        }
-
-        .card p {
-            font-size: 1.05rem;
-
-            color: #5a5048;
-
-            margin-bottom: 20px;
-        }
-
-        .card-button {
-            display: inline-block;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.68rem;
-
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
-
-            border-bottom: 1px solid #51433a;
-
-            padding-bottom: 3px;
-        }
-
-
-        /* =========================
-           REVIEW EXCERPT
-        ========================= */
-
-        .excerpt {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 50px;
-
-            border-left: 3px solid #806f61;
-
-            background:
-                linear-gradient(
-                    rgba(65, 24, 20, 0.72),
-                    rgba(65, 24, 20, 0.72)
-                ),
-                url("images/Red%20embroidery%20background.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-        }
-
-        .excerpt p {
-            font-size: 1.35rem;
-
-            font-style: italic;
-
-            color: #fff7ed;
-
-            text-align: center;
-        }
-
-
-        /* =========================
-           SECOND DECORATIVE IMAGE
-        ========================= */
-
-        .decorative-image-two {
-            width: 100%;
-
-            min-height: 300px;
-
-            margin: 25px 0;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    rgba(20, 15, 10, 0.18),
-                    rgba(20, 15, 10, 0.18)
-                ),
-                url("images/White%20lilies.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-
-            border: 1px solid #c6b9aa;
-
-            box-shadow:
-                0 8px 25px rgba(55,45,37,0.10);
-        }
-
-
-        /* =========================
-           QUIZZES
-        ========================= */
-
-        .quiz-section {
-            position: relative;
-
-            max-width: 850px;
-
-            text-align: center;
-
-            color: #f8f2e8;
-
-            background:
-                linear-gradient(
-                    rgba(25, 47, 64, 0.76),
-                    rgba(25, 47, 64, 0.76)
-                ),
-                url("images/Hands%20joining.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-
-            border: 1px solid #536b79;
-        }
-
-        .quiz-section .section-heading h2 {
-            color: #fffaf1;
-        }
-
-        .quiz-section .section-heading p {
-            color: #d7e0e5;
-        }
-
-        .quiz-section > p {
-            font-size: 1.2rem;
-
-            color: #f4f0e9;
-        }
-
-
-        /* =========================
-           BUTTON
-        ========================= */
-
-        .contact-button {
-            display: inline-block;
-
-            margin-top: 20px;
-
-            padding: 13px 25px;
-
-            background: #302822;
-
-            color: #f4eee3;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.7rem;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            transition: 0.25s ease;
-        }
-
-        .contact-button:hover {
-            background: #57483d;
-        }
-
-
-        /* =========================
-           AUTHOR SECTION
-        ========================= */
-
-        .author-section {
-            text-align: center;
-
-            border-top: 1px solid #c8bcae;
-        }
-
-        .author-section p {
-            max-width: 650px;
-
-            margin: 20px auto;
-
-            font-size: 1.15rem;
-
-            color: #51473f;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-section {
-            position: relative;
-
-            text-align: center;
-
-            max-width: 900px;
-
-            color: #fff7ed;
-
-            background:
-                linear-gradient(
-                    rgba(65, 25, 20, 0.70),
-                    rgba(65, 25, 20, 0.70)
-                ),
-                url("images/Carpet%20background.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-
-            border: 1px solid #9b7167;
-        }
-
-        .contact-section .section-heading h2 {
-            color: #fff7ed;
-        }
-
-        .contact-section .section-heading p {
-            color: #ead5cc;
-        }
-
-        .contact-section p {
-            max-width: 650px;
-
-            margin: 20px auto;
-
-            font-size: 1.15rem;
-
-            color: #fff3e9;
-        }
-
-        .contact-section .contact-button {
-            background: #f4eee3;
-
-            color: #302822;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 45px 7%;
-
-            text-align: center;
-
-            border-top: 1px solid #c8bcae;
-
-            color: #75685d;
-        }
-
-        footer .footer-title {
-            font-family: "Parisienne", cursive;
-
-            font-size: 2.2rem;
-
-            color: #382e28;
-        }
-
-        footer p {
-            margin-top: 8px;
-
-            font-family: "Montserrat", Arial, sans-serif;
-
-            font-size: 0.65rem;
-
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 650px) {
-
-            nav {
-                padding: 10px 3%;
-
-                gap: 3px;
-            }
-
-            nav a {
-                font-size: 0.6rem;
-
-                padding: 7px 8px;
-            }
-
-            .hero {
-                height: 400px;
-            }
-
-            .hero-title h1 {
-                font-size: 4rem;
-            }
-
-            .hero-title p {
-                font-size: 0.6rem;
-
-                letter-spacing: 2px;
-            }
-
-            .profile-container {
-                width: 145px;
-                height: 145px;
-
-                bottom: -72px;
-            }
-
-            .intro {
-                margin-top: 110px;
-            }
-
-            section {
-                padding: 55px 6%;
-            }
-
-            .image-row {
-                grid-template-columns: 1fr;
-
-                padding: 10px 6% 50px;
-            }
-
-            .image-box {
-                height: 230px;
-            }
-
-            .excerpt {
-                padding: 30px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lenore's Archive | Literature, Reviews & Reading</title>
+
+<meta name="description" content="Lenore's Archive — a literary space for book reviews, recommendations, quizzes and thoughtful exploration of literature.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #3b211d;
+    color: #33251f;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav {
+    background: #4b171b;
+    color: #f8ead1;
+    padding: 18px 12px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #d9b36c;
+}
+
+.hero {
+    min-height: 520px;
+    background:
+        linear-gradient(rgba(20,12,10,.25), rgba(20,12,10,.45)),
+        url("images/Hogwarts%20background.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px 110px;
+}
+
+.hero-box {
+    max-width: 900px;
+    color: white;
+    text-shadow: 0 3px 12px #000;
+}
+
+.hero h1 {
+    font-family: "Parisienne", cursive;
+    font-size: clamp(60px, 10vw, 105px);
+    font-weight: 400;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin: 8px 0;
+}
+
+.profile {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: -95px auto 30px;
+    position: relative;
+    z-index: 3;
+    border: 8px solid #f6e5c6;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page {
+    width: min(1100px, 92%);
+    margin: auto;
+    background: #f8efd9;
+    box-shadow: 0 0 35px rgba(0,0,0,.35);
+}
+
+.section {
+    padding: 65px clamp(22px, 6vw, 75px);
+    text-align: center;
+}
+
+.section h2 {
+    font-family: "Parisienne", cursive;
+    font-size: 54px;
+    font-weight: 400;
+    color: #651f25;
+    margin: 0 0 20px;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 12px auto;
+    font-size: 19px;
+}
+
+.intro {
+    background: #fff8e8;
+}
+
+.intro .lead {
+    font-size: 23px;
+    font-style: italic;
+}
+
+.ornament {
+    color: #9a6b25;
+    font-size: 28px;
+    margin: 10px;
+}
+
+.motivation {
+    color: #fff5df;
+    background:
+        linear-gradient(rgba(83,18,24,.72), rgba(83,18,24,.72)),
+        url("images/Red%20embroidery%20background.jpg") center/cover;
+}
+
+.motivation h2 {
+    color: #ffe5a9;
+}
+
+.motivation p {
+    max-width: 820px;
+}
+
+.image-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background: #ead7b7;
+}
+
+.image-strip img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #fffaf0;
+    border: 1px solid #d1ad72;
+    padding: 25px;
+    box-shadow: 0 7px 20px rgba(70,40,20,.15);
+}
+
+.card h3 {
+    color: #641e24;
+    font-size: 25px;
+    margin: 0 0 8px;
+}
+
+.card p {
+    font-size: 17px;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 18px;
+    background: #651f25;
+    color: #fff4dc;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.decor {
+    background: #3f211d;
+    color: #f9ecd3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    padding: 40px;
+}
+
+.decor img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.decor h2 {
+    color: #e1bd78;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 24px !important;
+}
+
+.quiz-section {
+    background:
+        linear-gradient(rgba(24,54,75,.72), rgba(24,54,75,.72)),
+        url("images/Hands%20joining.jpg") center/cover;
+    color: white;
+}
+
+.quiz-section h2 {
+    color: #f2d28e;
+}
+
+.author {
+    background:
+        linear-gradient(rgba(75,23,27,.88), rgba(75,23,27,.88)),
+        url("images/White%20lilies.jpg") center/cover;
+    color: #fff4df;
+}
+
+.author h2 {
+    color: #e6c37b;
+}
+
+.contact {
+    background:
+        linear-gradient(rgba(91,62,45,.78), rgba(91,62,45,.78)),
+        url("images/Carpet%20background.jpg") center/cover;
+    color: white;
+}
+
+.contact h2 {
+    color: #ffe0a2;
+}
+
+.email {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    background: #f4dfb3;
+    color: #4b171b;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+footer {
+    background: #4b171b;
+    color: #f5dfb8;
+    text-align: center;
+    padding: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+}
+
+footer .title {
+    font-family: "Parisienne", cursive;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 700px) {
+    nav {
+        gap: 14px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 430px;
+        padding-bottom: 90px;
+    }
+
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+    }
+
+    .section h2 {
+        font-size: 44px;
+    }
+
+    .section p {
+        font-size: 17px;
+    }
+
+    .image-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .image-strip img {
+        height: 210px;
+    }
+
+    .decor {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .decor img {
+        height: 230px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="quizzes.html">Quizzes</a>
+    <a href="reviews.html">Book Reviews</a>
+    <a href="recommendations.html">Recommendations</a>
+    <a href="Reach%20the%20author.html">Reach the Author</a>
+    <a href="about.html">About the Author</a>
+</nav>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
-    <nav>
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="quizzes.html">
-            Quizzes
-        </a>
-
-        <a href="reviews.html">
-            Book Reviews
-        </a>
-
-        <a href="recommendations.html">
-            Recommendations
-        </a>
-
-        <a href="Reach%20the%20author.html">
-            Reach the Author
-        </a>
-
-        <a href="about.html">
-            About the Author
-        </a>
-
-    </nav>
-
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <div class="hero">
-
-        <div class="hero-title">
-
-            <h1>
-                Lenore's Archive
-            </h1>
-
-            <p>
-                Literature · Reading · Ideas
-            </p>
-
-        </div>
-
-
-        <div class="profile-container">
-
-            <img
-                class="profile-photo"
-                src="images/Girl%20with%20a%20candle.jpg"
-                alt="Girl reading by candlelight"
-            >
-
-        </div>
-
+<header class="hero">
+    <div class="hero-box">
+        <h1>Lenore's Archive</h1>
+        <p>LITERATURE · READING · IDEAS</p>
+        <p>❦ A little corner for stories, questions and discoveries ❦</p>
     </div>
+</header>
 
+<main class="page">
 
+<div class="profile">
+    <img src="images/Girl%20with%20a%20candle.jpg" alt="A girl reading beside candlelight">
+</div>
 
-    <!-- =========================
-         INTRODUCTION
-    ========================== -->
+<section class="section intro">
+    <div class="ornament">❦ ✧ ❦</div>
+    <h2>Welcome to the Archive</h2>
 
-    <div class="intro">
+    <p class="lead">
+        A place where books are not merely finished, but explored.
+    </p>
 
-        <div class="subtitle">
-            A Literary Archive
-        </div>
+    <p>
+        Lenore's Archive is a literary space for readers who want to look
+        a little closer. Here, novels become starting points for questions,
+        conversations, ideas and discoveries.
+    </p>
 
-        <p class="intro-text">
+    <p>
+        Whether you are here for a review, a recommendation, a quiz or simply
+        because you love getting lost inside a book, there is something waiting
+        between these pages.
+    </p>
+</section>
 
-            A little corner of the internet devoted to books worth
-            lingering over — their stories, their characters, their
-            histories and the questions they leave behind.
+<section class="section motivation">
+    <div class="ornament">✦</div>
+    <h2>Why This Archive?</h2>
 
+    <p>
+        Literature can be more than a school subject. A novel can teach us
+        how language works, how characters are constructed, how themes grow
+        through a story and how writers quietly create meaning.
+    </p>
+
+    <p>
+        The reviews here are especially designed to be useful for students:
+        to explore why a novel might be worth studying, what can be learned
+        from it, how it can enrich vocabulary and how reading closely can
+        develop literary analysis.
+    </p>
+
+    <p>
+        Most importantly, I want that process to remain curious, enjoyable
+        and enriching rather than mechanical.
+    </p>
+</section>
+
+<div class="image-strip">
+    <img src="images/Aesthetic%20writing%20desk.jpg" alt="A writing desk">
+    <img src="images/Autumn%20hallway.jpg" alt="An autumn hallway">
+    <img src="images/Sunlight%20cathedral.jpg" alt="Sunlight inside a cathedral">
+</div>
+
+<section class="section">
+    <div class="ornament">❧</div>
+    <h2>Featured Review</h2>
+
+    <div class="cards">
+        <article class="card">
+            <h3>The Picture of Dorian Gray</h3>
+            <p><strong>Oscar Wilde</strong></p>
+            <p>
+                Beauty, morality, influence and the strange consequences of
+                wishing to remain untouched by time.
+            </p>
+            <a class="card-button" href="dorian-gray-review.html">
+                Read the Review →
+            </a>
+        </article>
+
+        <article class="card">
+            <h3>Dracula</h3>
+            <p><strong>Bram Stoker</strong></p>
+            <p>
+                Gothic atmosphere, fear, desire, Victorian anxieties and one
+                of literature's most enduring monsters.
+            </p>
+            <a class="card-button" href="reviews.html">
+                Explore Reviews →
+            </a>
+        </article>
+    </div>
+</section>
+
+<section class="decor">
+    <img src="images/Fire%20place%20cat.jpg" alt="A cat beside a fireplace">
+
+    <div>
+        <h2>Stories Stay With Us</h2>
+        <p class="quote">
+            "Perhaps the best conversations are the ones that begin between
+            the pages."
         </p>
-
-    </div>
-
-
-
-    <!-- =========================
-         WHY THIS ARCHIVE EXISTS
-    ========================== -->
-
-    <section class="motivation">
-
-        <div class="section-heading">
-
-            <h2>
-                Why This Archive?
-            </h2>
-
-            <p>
-                The story behind the project
-            </p>
-
-        </div>
-
-
         <p>
-
-            Lenore's Archive was created out of a love for reading
-            closely and thinking beyond the final page. Here, books
-            are not simply rated and forgotten — they are explored,
-            questioned and connected to the wider world of literature.
-
+            A book can leave behind a question long after its final sentence.
+            This space is for those questions.
         </p>
-
-    </section>
-
-
-
-    <!-- =========================
-         DECORATIVE IMAGE
-    ========================== -->
-
-    <section>
-
-        <div class="decorative-image">
-
-            <span>
-                A place for words, ideas and stories
-            </span>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         IMAGE ROW
-    ========================== -->
-
-    <div class="image-row">
-
-        <div class="image-box image-one"></div>
-
-        <div class="image-box image-two"></div>
-
-        <div class="image-box image-three"></div>
-
     </div>
+</section>
 
+<section class="section quiz-section">
+    <div class="ornament">✧ ❦ ✧</div>
+    <h2>Enter the Literary Games</h2>
 
+    <p>
+        Literature does not always have to be serious. Sometimes you can
+        discover a character, an author or even a fictional world through
+        a ridiculous little quiz.
+    </p>
 
-    <!-- =========================
-         FEATURED REVIEWS
-    ========================== -->
+    <a class="card-button" href="quizzes.html">
+        Take a Quiz →
+    </a>
+</section>
 
-    <section>
+<section class="section">
+    <div class="ornament">❦</div>
+    <h2>Book Recommendations</h2>
 
-        <div class="section-heading">
+    <p>
+        Looking for your next book? Explore selections from classics,
+        gothic fiction, psychological novels and other literary curiosities.
+    </p>
 
-            <h2>
-                From the Archive
-            </h2>
+    <a class="card-button" href="recommendations.html">
+        Browse Recommendations →
+    </a>
+</section>
 
-            <p>
-                Featured literary reviews
-            </p>
+<section class="section author">
+    <div class="ornament">✦</div>
+    <h2>About the Author</h2>
 
-        </div>
+    <p>
+        "And the Raven, never flitting, still is sitting, still is sitting"
+    </p>
 
+    <p>
+        — Edgar Allan Poe, <em>The Raven</em>
+    </p>
 
-        <div class="cards">
+    <p>
+        Hello, I'm <strong>Sharanya Mridha</strong>.
+    </p>
 
+    <p>
+        I have always been drawn to the strange little spaces that exist
+        between words — the things a story says quietly, the questions it
+        leaves behind and the feelings that remain long after the final page
+        has been turned.
+    </p>
 
-            <article class="card">
+    <p>
+        Lenore's Archive grew from that fascination. It is my little corner
+        of the literary world: a place for stories to be examined, ideas to
+        wander, questions to be asked and discoveries to be shared.
+    </p>
 
-                <div class="card-label">
-                    Literary Review
-                </div>
+    <a class="card-button" href="about.html">
+        Enter the Archive →
+    </a>
+</section>
 
-                <h3>
-                    The Picture of Dorian Gray
-                </h3>
+<section class="section contact">
+    <div class="ornament">❧</div>
+    <h2>Reach the Author</h2>
 
-                <p>
+    <p>
+        Have a thought about a review? A book you think belongs here?
+        A question, suggestion or simply something literary to say?
+    </p>
 
-                    An exploration of Oscar Wilde's novel,
-                    its obsession with beauty, morality,
-                    identity and corruption.
+    <p>
+        The door is open.
+    </p>
 
-                </p>
+    <a class="email" href="mailto:sharanyamridha10@gmail.com">
+        Send an Email
+    </a>
+</section>
 
-                <a href="#" class="card-button">
-                    Reach the Author →
-        </a>
+</main>
 
-    </section>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-title">
-            Lenore's Archive
-        </div>
-
-        <p>
-            © 2026 Lenore's Archive · All rights reserved
-        </p>
-
-    </footer>
-
+<footer>
+    <div class="title">Lenore's Archive</div>
+    <div>© 2026 Lenore's Archive · All rights reserved</div>
+</footer>
 
 </body>
 </html>
